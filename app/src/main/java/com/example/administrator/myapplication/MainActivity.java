@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.administrator.myapplication.video.VideoMainActivity;
+import com.example.administrator.myapplication.video.test_videoplayer;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -35,8 +38,11 @@ public class MainActivity extends AppCompatActivity {
                 goNextIntent(com.example.administrator.myapplication.jieping.MainActivity.class);
                 break;
             case R.id.btn2:
+                //视频+弹幕
+                goNextIntent(VideoMainActivity.class);
                 break;
             case R.id.btn3:
+                goNextIntent(test_videoplayer.class);
                 break;
             case R.id.btn4:
                 break;

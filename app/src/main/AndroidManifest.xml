@@ -77,7 +77,8 @@
             android:windowSoftInputMode="adjustResize|stateHidden">
         </activity>
         <activity android:name=".jieping.MainActivity"/>
-
+        <activity android:name=".video.VideoMainActivity"/>
+        <activity android:name=".video.test_videoplayer"/>
     </application>
 
 </manifest>
