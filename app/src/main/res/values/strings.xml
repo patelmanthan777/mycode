@@ -8,7 +8,14 @@
     <string name="send_danmaku_image_text">发送一条(图文)</string>
     <string name="send_danmakus">定时发送</string>
     <string name="cancel_sending_danmakus">取消定时</string>
-
+    <!-- xrecycleview  -->
+    <string name="listview_header_hint_normal">下拉刷新</string>
+    <string name="listview_header_hint_release">释放加载</string>
+    <string name="listview_loading">加载中...</string>
+    <string name="nomore_loading">已全部加载</string>
+    <string name="refreshing">加载中...</string>
+    <string name="refresh_done">加载完成</string>
+    <string name="listview_header_last_time">last update：</string>
     <string name="release">release</string>
     <string name="screenshot_failed_to_save_text">screenshot_failed_to_save_text</string>
     <string name="rotate">旋转屏幕</string>

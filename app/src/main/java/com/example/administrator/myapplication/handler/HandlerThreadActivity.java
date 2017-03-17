@@ -53,7 +53,7 @@ public class HandlerThreadActivity extends AppCompatActivity {
                         new Handler().post(new Runnable() {
                             @Override
                             public void run() {
-                                Log.e("asdasd", Thread.currentThread().getName());
+                                Log.e("asdasd", "Thread" + Thread.currentThread().getName());
                             }
                         });
                         Looper.loop();
@@ -65,10 +65,15 @@ public class HandlerThreadActivity extends AppCompatActivity {
                     protected int sizeOf(String key, Bitmap value) {
                         return value.getRowBytes() * value.getHeight();
                     }
-
-                    ;
                 };
 
+            }
+        });
+        findViewById(R.id.btn1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                initBackThread();
+                mCheckMsgHandler.sendEmptyMessage(MSG_UPDATE_INFO);
             }
         });
     }
@@ -95,6 +100,7 @@ public class HandlerThreadActivity extends AppCompatActivity {
         mCheckMsgHandler = new Handler(mCheckMsgThread.getLooper()) {
             @Override
             public void handleMessage(Message msg) {
+                Log.e("asdasd", "initBackThread" + Thread.currentThread().getName());
                 checkForUpdate();
             }
         };
@@ -109,6 +115,7 @@ public class HandlerThreadActivity extends AppCompatActivity {
                 mCheckMsgHandler = new Handler(Looper.myLooper()) {
                     @Override
                     public void handleMessage(Message msg) {
+                        Log.e("asdasd", "initBackThread1" + Thread.currentThread().getName());
                         checkForUpdate();
                     }
                 };
@@ -127,6 +134,7 @@ public class HandlerThreadActivity extends AppCompatActivity {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
+                    Log.e("asdasd", "checkForUpdate:" + Thread.currentThread().getName());
                     String result = "实时更新中，当前大盘指数：<font color='red'>%d</font>";
                     result = String.format(result, (int) (Math.random() * 3000 + 1000));
                     mTvServiceInfo.setText(Html.fromHtml(result));

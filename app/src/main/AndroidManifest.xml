@@ -79,6 +79,9 @@
         <activity android:name=".jieping.MainActivity"/>
         <activity android:name=".video.VideoMainActivity"/>
         <activity android:name=".video.test_videoplayer"/>
+        <activity android:name=".handler.HandlerThreadActivity"/>
+        <activity android:name=".behavior.BehaviorActivity"/>
+        <activity android:name=".behavior.RecycleToolbarActivity"/>
     </application>
 
 </manifest>

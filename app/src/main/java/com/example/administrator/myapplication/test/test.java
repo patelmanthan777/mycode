@@ -5,13 +5,9 @@ package com.example.administrator.myapplication.test;
  */
 
 public class test {
-    static String xxx = "{\"channelCollections\": [{\n" +
-            "        \"channelNewsCount\": \"0\",\n" +
-            "        \"hellow\":\"aaa\"\n" +
-            "    }]}";
 
     public static void main(String[] args) {
-        A2 a2 = new A2();
-        a2.ellow();
+        //101100
+        System.out.println(11 << 2);
     }
 }

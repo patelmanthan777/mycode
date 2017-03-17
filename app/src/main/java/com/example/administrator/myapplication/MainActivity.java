@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.administrator.myapplication.behavior.BehaviorActivity;
+import com.example.administrator.myapplication.handler.HandlerThreadActivity;
 import com.example.administrator.myapplication.video.VideoMainActivity;
 import com.example.administrator.myapplication.video.test_videoplayer;
 
@@ -30,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4})
+    @OnClick({R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4, R.id.btn5, R.id.btn6})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn1:
@@ -46,6 +48,11 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn4:
                 break;
+            case R.id.btn5:
+                goNextIntent(HandlerThreadActivity.class);
+                break;
+            case R.id.btn6:
+                goNextIntent(BehaviorActivity.class);
         }
     }
 
