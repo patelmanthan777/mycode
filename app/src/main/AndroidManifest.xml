@@ -82,6 +82,10 @@
         <activity android:name=".handler.HandlerThreadActivity"/>
         <activity android:name=".behavior.BehaviorActivity"/>
         <activity android:name=".behavior.RecycleToolbarActivity"/>
+        <activity android:name=".courese_detail.CourseDetailActivity"/>
+        <activity android:name=".recycle_virtural.VirturalRecycleActivity"/>
+        <activity android:name=".touch.TouchActivity"/>
+        <activity android:name=".recycler_swipe.MenuHorizontalActivity"/>
     </application>
 
 </manifest>

@@ -1,5 +1,7 @@
 package com.example.administrator.myapplication.test;
 
+import android.view.View;
+
 /**
  * Created by xcy on 2017/1/5 0005.
  */
@@ -7,7 +9,12 @@ package com.example.administrator.myapplication.test;
 public class test {
 
     public static void main(String[] args) {
-        //101100
-        System.out.println(11 << 2);
+        B b = new B();
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+            }
+        });
     }
 }

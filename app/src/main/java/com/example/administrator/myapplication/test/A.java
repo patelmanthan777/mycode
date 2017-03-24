@@ -1,15 +1,15 @@
 package com.example.administrator.myapplication.test;
 
+import android.view.View;
+
 /**
- * Created by xcy on 2017/2/8 0008.
+ * Created by xcy on 2017/3/24 0024.
  */
 
-public class A {
-    public void ellow() {
-        goThere();
-    }
+public abstract class A {
+    private View.OnClickListener mOnClickListener;
 
-    public void goThere() {
-        System.out.println("hellow");
+    public void setOnClickListener(View.OnClickListener clickListener) {
+        mOnClickListener = clickListener;
     }
 }

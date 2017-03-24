@@ -7,7 +7,11 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.administrator.myapplication.behavior.BehaviorActivity;
+import com.example.administrator.myapplication.courese_detail.CourseDetailActivity;
 import com.example.administrator.myapplication.handler.HandlerThreadActivity;
+import com.example.administrator.myapplication.recycle_virtural.VirturalRecycleActivity;
+import com.example.administrator.myapplication.recycler_swipe.MenuHorizontalActivity;
+import com.example.administrator.myapplication.touch.TouchActivity;
 import com.example.administrator.myapplication.video.VideoMainActivity;
 import com.example.administrator.myapplication.video.test_videoplayer;
 
@@ -32,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4, R.id.btn5, R.id.btn6})
+    @OnClick({R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4, R.id.btn5, R.id.btn6, R.id.btn7, R.id
+            .btn8, R.id.btn9, R.id.btn10})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn1:
@@ -53,6 +58,19 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn6:
                 goNextIntent(BehaviorActivity.class);
+                break;
+            case R.id.btn7:
+                goNextIntent(CourseDetailActivity.class);
+                break;
+            case R.id.btn8:
+                goNextIntent(VirturalRecycleActivity.class);
+                break;
+            case R.id.btn9:
+                goNextIntent(TouchActivity.class);
+                break;
+            case R.id.btn10:
+                goNextIntent(MenuHorizontalActivity.class);
+                break;
         }
     }
 
