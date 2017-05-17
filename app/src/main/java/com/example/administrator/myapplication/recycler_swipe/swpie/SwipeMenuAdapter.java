@@ -25,8 +25,6 @@ import com.example.administrator.myapplication.recycler_swipe.BaseRecycleAdapter
 import com.example.administrator.myapplication.recycler_swipe.BaseRecycleViewHolder;
 import com.example.administrator.myapplication.recycler_swipe.SwipeXRecyclerView;
 
-import java.util.List;
-
 /**
  * Created by Yan Zhenjie on 2016/7/27.
  */
@@ -111,7 +109,7 @@ public abstract class SwipeMenuAdapter<T, VH extends BaseRecycleViewHolder<T>> e
     }
 
     @Override
-    public final void onBindViewHolder(VH holder, int position, List<Object> payloads) {
+    public void onBindViewHolder(VH holder, int position) {
         View itemView = holder.itemView;
         //这里需要绑定每一个侧滑的view到当前的viewholder，为了点击的时候知道目前的position
         if (itemView instanceof SwipeMenuLayout) {
@@ -124,6 +122,6 @@ public abstract class SwipeMenuAdapter<T, VH extends BaseRecycleViewHolder<T>> e
                 }
             }
         }
-        onBindViewHolder(holder, position);
+        super.onBindViewHolder(holder, position);
     }
 }

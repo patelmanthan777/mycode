@@ -1,6 +1,8 @@
 package com.example.administrator.myapplication.test;
 
-import android.view.View;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by xcy on 2017/1/5 0005.
@@ -9,12 +11,14 @@ import android.view.View;
 public class test {
 
     public static void main(String[] args) {
-        B b = new B();
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                
-            }
-        });
+        Map<String, String> map = new HashMap<>();
+        map.put("asd", "asdasd");
+        map.put("asd", "qqqq");
+        map.put("", "521");
+        map.put("", "qqq5666q");
+        String aaa = "124122114112";
+        System.out.println(aaa.replaceAll("1", ""));
+        System.out.println(1 == 1 ? "" : "23" + 1);
+
     }
 }

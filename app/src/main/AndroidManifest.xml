@@ -86,6 +86,17 @@
         <activity android:name=".recycle_virtural.VirturalRecycleActivity"/>
         <activity android:name=".touch.TouchActivity"/>
         <activity android:name=".recycler_swipe.MenuHorizontalActivity"/>
+        <activity android:name=".kuaidi.KuaiDiActivity"/>
+        <activity android:name=".mutiprocess.MutiProcessActivity"/>
+        <activity android:name=".pxdpsp.Px2Dp2SpActivity"/>
+        <activity android:name=".bundle.BundleActivity"/>
+        <activity android:name=".alpha.AlphaActivity"/>
+        <activity android:name=".gif.GifActivity"/>
+
+        <service
+            android:name=".mutiprocess.ProcessServiceTest1"
+            android:process="com.example.administrator.myapplication.mutiprocess"
+            />
     </application>
 
 </manifest>

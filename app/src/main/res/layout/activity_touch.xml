@@ -7,6 +7,12 @@
     android:orientation="vertical"
     >
 
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="点击"/>
+
     <com.example.administrator.myapplication.touch.TouchLinear
         android:layout_width="match_parent"
         android:layout_height="300dip"
