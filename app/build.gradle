@@ -35,10 +35,6 @@ android {
             signingConfig signingConfigs.releaseconfig
         }
     }
-    productFlavors {
-        hellow1 {
-        }
-    }
 }
 
 dependencies {
@@ -66,6 +62,7 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.0.1'
     apt 'com.jakewharton:butterknife-compiler:8.0.1'
     apt 'com.android.databinding:compiler:2.3.0'
+    compile 'org.greenrobot:eventbus:3.0.0'
     compile 'com.google.android.gms:play-services-appindexing:8.4.0'
     compile "com.android.support:design:25.2.0"
     compile('com.alibaba.android:vlayout:1.0.2@aar') {
