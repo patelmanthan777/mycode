@@ -26,6 +26,7 @@ public class KuaiDiApi {
     //轨迹查询
     private String Guijichaxun = "http://api.kdniao.cc/Ebusiness/EbusinessOrderHandle.aspx";
 
+
     //正式请求url
 //    private String ReqURL = "http://api.kdniao.cc/api/dist";
 
@@ -73,6 +74,30 @@ public class KuaiDiApi {
         params.put("DataType", "2");
 
         String result = sendPost(ReqURL, params);
+
+        //根据公司业务处理返回的信息......
+
+        return result;
+    }
+
+    /**
+     * Json方式 单号识别
+     *
+     * @throws Exception
+     */
+    public String getOrderTracesByJson(String expNo) throws Exception {
+        String requestData = "{'LogisticCode':'" + expNo + "'}";
+
+        Map<String, String> params = new HashMap<String, String>();
+        params.put("RequestData", urlEncoder(requestData, "UTF-8"));
+        params.put("EBusinessID", EBusinessID);
+        params.put("RequestType", "2002");
+        String dataSign = encrypt(requestData, AppKey, "UTF-8");
+        params.put("DataSign", urlEncoder(dataSign, "UTF-8"));
+        params.put("DataType", "2");
+
+        String result = sendPost("http://api.kdniao.cc/Ebusiness/EbusinessOrderHandle.aspx",
+                params);
 
         //根据公司业务处理返回的信息......
 

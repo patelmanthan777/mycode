@@ -11,9 +11,6 @@ import com.example.administrator.myapplication.R;
 
 import java.io.File;
 
-import rx.Observable;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action0;
 
 /**
  * Created by xcy on 2017/2/24 0024.
@@ -81,17 +78,17 @@ public class DownloadMainActivity extends AppCompatActivity implements ProgressR
         progressBar.setProgress((int) (totalBytes + breakPoints) / 1024);
         if (done) {
             // 切换到主线程
-            Observable
-                    .empty()
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .doOnCompleted(new Action0() {
-                        @Override
-                        public void call() {
-                            Toast.makeText(DownloadMainActivity.this, "下载完成", Toast.LENGTH_SHORT)
-                                    .show();
-                        }
-                    })
-                    .subscribe();
+//            Observable
+//                    .empty()
+//                    .observeOn(AndroidSchedulers.mainThread())
+//                    .doOnCompleted(new Action0() {
+//                        @Override
+//                        public void call() {
+//                            Toast.makeText(DownloadMainActivity.this, "下载完成", Toast.LENGTH_SHORT)
+//                                    .show();
+//                        }
+//                    })
+//                    .subscribe();
         }
     }
 }

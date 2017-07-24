@@ -111,15 +111,64 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="bundle的获取"/>
+
         <Button
             android:id="@+id/btn15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="alpha"/>
+
         <Button
             android:id="@+id/btn16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="gif"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="brod广播"/>
+
+        <Button
+            android:id="@+id/btn18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="权限注册"/>
+
+        <Button
+            android:id="@+id/btn19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="内存泄漏"/>
+
+        <Button
+            android:id="@+id/btn20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="urlscheme"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="activity模式"/>
+        <Button
+            android:id="@+id/btn22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="webview"/>
     </LinearLayout>
 </LinearLayout>

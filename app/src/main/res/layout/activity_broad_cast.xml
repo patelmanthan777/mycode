@@ -2,37 +2,50 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="#fff"
+              android:background="#00ffffff"
               android:orientation="vertical"
     >
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00f7ef04"
+        android:orientation="vertical">
+        <!--android:background="#f7ef04"-->
+
+        <TextView
+            android:id="@+id/textview"
+            android:layout_width="match_parent"
+            android:layout_height="200dip"
+            android:background="#f7ef04"
+            android:gravity="center"
+            android:text="你好啊"
+            android:textColor="#000000"/>
+    </LinearLayout>
+
 
     <Button
         android:id="@+id/btn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="startservice"/>
+        android:text="+"/>
 
     <Button
         android:id="@+id/btn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="bindservice"/>
+        android:text="-"/>
 
     <Button
         android:id="@+id/btn3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="sayhello"/>
+        android:text="l+"/>
 
     <Button
         android:id="@+id/btn4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="event"/>
-
-    <Button
-        android:id="@+id/btn5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="process"/>
+        android:text="l-"/>
 </LinearLayout>

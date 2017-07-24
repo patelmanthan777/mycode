@@ -5,6 +5,7 @@ import android.databinding.Bindable;
 
 import com.example.administrator.myapplication.BR;
 
+
 /**
  * Created by xcy on 2017/1/6 0006.
  */

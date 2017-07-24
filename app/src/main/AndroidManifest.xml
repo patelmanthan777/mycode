@@ -24,7 +24,6 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_LOGS"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <permission android:name="android.permission.READ_FRAME_BUFFER"/>
     <uses-permission android:name="android.permission.NFC"/>
@@ -36,31 +35,53 @@
     <uses-permission android:name="org.simalliance.openmobileapi.SMARTCARD"/>
 
     <application
-        android:name="android.support.multidex.MultiDexApplication"
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:process=":test"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="MainActivity">
+        <activity
+            android:name=".SplashActivity"
+            android:allowTaskReparenting="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
 
+                <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
+
+            </intent-filter>
+            <intent-filter>
+                <data
+                    android:host="nihao"
+                    android:scheme="xcy"/>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"/>
+        <!--xcy://nihao/addf?aaa=123  splash-->
+        <!--aiyou://nihao/addf?aaa=123   直接-->
         <activity
-            android:name=".alipay.sdk.pay.demo.test.demo.H5PayDemoActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:exported="false"
-            android:screenOrientation="behind">
+            android:name=".urlscheam.UrlScActivity"
+            android:allowTaskReparenting="true"
+            >
+            <!--要想在别的App上能成功调起App，必须添加intent过滤器-->
+            <!--wscshangxueyuan://login-->
+            <intent-filter>
+                <!--协议部分，随便设置-->
+                <data
+                    android:host="nihao"
+                    android:scheme="aiyou"/>
+                <!--下面这几行也必须得设置-->
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
         </activity>
-        <activity
-            android:name=".alipay.sdk.pay.demo.test.demo.PayDemoActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:exported="false"
-            android:screenOrientation="behind">
-        </activity>
+
         <!-- alipay sdk begin -->
         <activity
             android:name="com.alipay.sdk.app.H5PayActivity"
@@ -87,15 +108,71 @@
         <activity android:name=".touch.TouchActivity"/>
         <activity android:name=".recycler_swipe.MenuHorizontalActivity"/>
         <activity android:name=".kuaidi.KuaiDiActivity"/>
-        <activity android:name=".mutiprocess.MutiProcessActivity"/>
+        <activity android:name=".service_process.mutiprocess.MutiProcessActivity"/>
         <activity android:name=".pxdpsp.Px2Dp2SpActivity"/>
         <activity android:name=".bundle.BundleActivity"/>
         <activity android:name=".alpha.AlphaActivity"/>
         <activity android:name=".gif.GifActivity"/>
+        <activity android:name=".broadcast.BroadCastActivity"/>
+        <activity android:name=".broadcast.MyTestActivity"/>
+        <activity android:name=".broadcast.MyTestActivity1"/>
+        <activity android:name=".permission.PermissionActivity"/>
+        <activity android:name=".LeakActivity"/>
+        <activity
+            android:name=".urlscheam.launch.SingleTopActivity"
+            android:launchMode="singleTop"
+            />
+
+        <activity
+            android:name=".urlscheam.launch.SingleTaskActivity"
+            android:launchMode="singleTask"
+            />
+        <activity
+            android:name=".urlscheam.launch.SingleInctanceActivity1"
+            android:launchMode="singleInstance"
+            />
+        <activity
+            android:name=".urlscheam.launch.SingleInctanceActivity"
+            android:launchMode="singleInstance"
+            />
+        <activity
+            android:name=".urlscheam.launch.StandardActivity"
+            android:launchMode="standard"
+            />
+        <activity
+            android:name=".urlscheam.launch.StandardActivityBBB"
+            android:launchMode="standard"
+            />
+        <activity
+            android:name=".urlscheam.launch.StandardActivityCCC"
+            android:launchMode="standard"
+            />
+
+        <receiver android:name=".broadcast.MyBroadCastRe">
+            <intent-filter>
+                <action android:name="android.intent.action.MY_BROADCAST"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+
+        <!--<receiver android:name=".broadcast.MyTestActivity$MYBroad">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.intent.action.Hellowbroad"/>-->
+        <!--<category android:name="android.intent.category.DEFAULT"/>-->
+        <!--</intent-filter>-->
+        <!--</receiver>-->
 
         <service
-            android:name=".mutiprocess.ProcessServiceTest1"
+            android:name=".service_process.mutiprocess.ProcessServiceTest1"
             android:process="com.example.administrator.myapplication.mutiprocess"
+            />
+
+        <activity
+            android:name=".service_process.mutiprocess.ProcessActivity"
+            android:process=":proceacti"
+            />
+        <activity
+            android:name=".service_process.mutiprocess.ProcessActivity1"
             />
     </application>
 

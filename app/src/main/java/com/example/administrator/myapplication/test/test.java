@@ -1,8 +1,9 @@
 package com.example.administrator.myapplication.test;
 
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Created by xcy on 2017/1/5 0005.
@@ -11,14 +12,14 @@ import java.util.Map;
 public class test {
 
     public static void main(String[] args) {
-        Map<String, String> map = new HashMap<>();
-        map.put("asd", "asdasd");
-        map.put("asd", "qqqq");
-        map.put("", "521");
-        map.put("", "qqq5666q");
-        String aaa = "124122114112";
-        System.out.println(aaa.replaceAll("1", ""));
-        System.out.println(1 == 1 ? "" : "23" + 1);
-
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            String xx = "aa" + i;
+            list.add(xx);
+        }
+        List<String> listnew = Collections.unmodifiableList(list);
+        for (String a : listnew) {
+            System.out.println(a);
+        }
     }
 }

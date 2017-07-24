@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<html>
+
+<body>
+
+<div id="div1">
+    <p id="p1">这是一个段落。</p>
+    <p id="p2">这是另一个段落。</p>
+</div>
+<p id="p11">我可以直接被删除吗</p>
+<button onclick="fushanchu()">用父删除子</button>
+<button onclick="zhijieshanchu()">直接删除</button>
+<button onclick="gouzaoduixiang()">构造对象</button>
+<a href="xcy://nihao/addf?aaa=123">点击我啊</a>
+<a href="aiyou://nihao/addf?aaa=123">aiyoudianji</a>
+
+<script>
+        function fushanchu() {
+            var parent = document.getElementById("div1");
+            var child = document.getElementById("p1");
+            parent.removeChild(child);
+        }
+        function zhijieshanchu() {
+            var child = document.getElementById("p11");
+            child.remove();
+        }
+        function person(name, age) {
+            this.name = name;
+            this.age = age;
+            this.xiugaimingzi = xiugaimingzi;
+            function xiugaimingzi(aa) {
+                this.name = aa;
+            }
+        }
+        function gouzaoduixiang() {
+            var wode = new person("xcy", "18");
+            for (var x in wode) {
+                console.log();
+            }
+            wode.xiugaimingzi("woshishui");
+            alert(wode.name);
+            // alert(wode.name + "::" + wode.age);
+        }
+    </script>
+
+</body>
+
+</html>
