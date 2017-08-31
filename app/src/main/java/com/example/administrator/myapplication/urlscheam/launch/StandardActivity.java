@@ -1,9 +1,11 @@
 package com.example.administrator.myapplication.urlscheam.launch;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -59,6 +61,17 @@ public class StandardActivity extends BaseACtivity {
                 startActivityForResult(serviceIntent, 1111);
                 break;
             case R.id.btn3:
+                ProgressDialog dialog = ProgressDialog.show(this, "nihao", "xxxx");
+                dialog.setCancelable(true);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent123 = new Intent(StandardActivity.this, StandardActivityBBB
+                                .class);
+                        startActivity(intent123);
+                    }
+                }, 1000);
+
                 break;
             case R.id.btn4:
                 break;

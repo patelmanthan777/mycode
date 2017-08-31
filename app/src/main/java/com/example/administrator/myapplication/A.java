@@ -10,4 +10,12 @@ public class A {
     public A(String a) {
         this.xx = a;
     }
+
+    public String getXx() {
+        return xx;
+    }
+
+    public void setXx(String xx) {
+        this.xx = xx;
+    }
 }

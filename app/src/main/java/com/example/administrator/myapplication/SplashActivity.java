@@ -36,10 +36,10 @@ public class SplashActivity extends Activity {
                 Intent intent = getIntent();
                 String action = intent.getAction();
                 if (action.equals(Intent.ACTION_MAIN)) {
-                    Intent i = new Intent(SplashActivity.this, MainActivity.class);
+                    Intent i = new Intent(SplashActivity.this, MainTitleActivity.class);
                     startActivity(i);
                 } else if (action.equals(Intent.ACTION_VIEW)) {
-                    Intent i = new Intent(SplashActivity.this, MainActivity.class);
+                    Intent i = new Intent(SplashActivity.this, MainTitleActivity.class);
                     i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(i);
                 }

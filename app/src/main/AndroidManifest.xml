@@ -51,17 +51,17 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
 
             </intent-filter>
-            <intent-filter>
-                <data
-                    android:host="nihao"
-                    android:scheme="xcy"/>
-                <action android:name="android.intent.action.VIEW"/>
+            <!--<intent-filter>-->
+            <!--<data-->
+            <!--android:host="nihao"-->
+            <!--android:scheme="xcy"/>-->
+            <!--<action android:name="android.intent.action.VIEW"/>-->
 
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-            </intent-filter>
+            <!--<category android:name="android.intent.category.DEFAULT"/>-->
+            <!--<category android:name="android.intent.category.BROWSABLE"/>-->
+            <!--</intent-filter>-->
         </activity>
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainTitleActivity"/>
         <!--xcy://nihao/addf?aaa=123  splash-->
         <!--aiyou://nihao/addf?aaa=123   直接-->
         <activity
@@ -98,8 +98,10 @@
             android:windowSoftInputMode="adjustResize|stateHidden">
         </activity>
         <activity android:name=".jieping.MainActivity"/>
-        <activity android:name=".video.VideoMainActivity"/>
-        <activity android:name=".video.test_videoplayer"/>
+        <activity
+            android:name=".titlebar.TitleBarActivity"
+            android:theme="@style/mytheme"
+            />
         <activity android:name=".handler.HandlerThreadActivity"/>
         <activity android:name=".behavior.BehaviorActivity"/>
         <activity android:name=".behavior.RecycleToolbarActivity"/>
@@ -117,11 +119,24 @@
         <activity android:name=".broadcast.MyTestActivity"/>
         <activity android:name=".broadcast.MyTestActivity1"/>
         <activity android:name=".permission.PermissionActivity"/>
+        <activity android:name=".pxdpsp.GetPxFromXml"/>
         <activity android:name=".LeakActivity"/>
+        <activity android:name=".lottie.LottieActivity"/>
+        <activity android:name=".urlscheam.WebViewActivity"/>
         <activity
             android:name=".urlscheam.launch.SingleTopActivity"
             android:launchMode="singleTop"
-            />
+            >
+            <intent-filter>
+                <data
+                    android:host="nihao"
+                    android:scheme="xcy"/>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".urlscheam.launch.SingleTaskActivity"
@@ -138,15 +153,48 @@
         <activity
             android:name=".urlscheam.launch.StandardActivity"
             android:launchMode="standard"
-            />
+            >
+            <intent-filter>
+                <data
+                    android:host="nihao"
+                    android:path="/standard"
+                    android:scheme="xcy"/>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
         <activity
             android:name=".urlscheam.launch.StandardActivityBBB"
             android:launchMode="standard"
-            />
+            >
+            <intent-filter>
+                <data
+                    android:host="nihao"
+                    android:pathPrefix="/standardBB"
+                    android:scheme="xcy"/>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
         <activity
             android:name=".urlscheam.launch.StandardActivityCCC"
             android:launchMode="standard"
-            />
+            >
+            <intent-filter>
+                <data
+                    android:host="nihao"
+                    android:path="/standardBB/standardCC"
+                    android:scheme="xcy"/>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
 
         <receiver android:name=".broadcast.MyBroadCastRe">
             <intent-filter>
@@ -174,6 +222,7 @@
         <activity
             android:name=".service_process.mutiprocess.ProcessActivity1"
             />
+        <activity android:name=".okhttp.ShangchaoActivity"/>
     </application>
 
 </manifest>

@@ -1,12 +1,15 @@
 package com.example.administrator.myapplication.titlebar;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.SystemClock;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
-import com.example.administrator.myapplication.A;
 import com.example.administrator.myapplication.R;
+
+import butterknife.ButterKnife;
 
 
 /**
@@ -14,37 +17,54 @@ import com.example.administrator.myapplication.R;
  */
 
 public class TitleBarActivity extends Activity {
-    private A mA;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alpha);
-        startAsyncTask();
-        String a = "asdasd";
-        mA = new A(a);
-        a = null;
+        setContentView(R.layout.activity_title);
+        ButterKnife.bind(this);
+        StatusBarCompat.translucentStatusBar(this, false);
+//        StatusBarCompat.setStatusBarColor(this, Color.RED);
+
     }
 
-    void startAsyncTask() {
-        // This async task is an anonymous class and therefore has a hidden reference to the outer
-        // class MainActivity. If the activity gets destroyed before the task finishes (e.g.
-        // rotation),
-        // the activity instance will leak.
-        new AsyncTask<Void, Void, Void>() {
-            @Override
-            protected Void doInBackground(Void... params) {
-                // Do some slow work in background
-                SystemClock.sleep(20000);
-                return null;
-            }
-        }.execute();
+    @SuppressLint("InlinedApi")
+    private static final int DEFAULT_IMMERSIVE_FLAGS =
+            View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION;
+
+    @SuppressLint("InlinedApi")
+    private static final int DIALOG_IMMERSIVE_FLAGS =
+            View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+
+//    @OnClick({R.id.btn, R.id.btn1})
+//    public void onViewClicked(View view) {
+//        switch (view.getId()) {
+//            case R.id.btn:
+//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//                    addVisibilityFlag(getWindow(), DEFAULT_IMMERSIVE_FLAGS);
+//
+//                    // Also set the navigation bar and status bar to transparent color. Note that
+//                    // this
+//                    // doesn't work if android.R.boolean.config_enableTranslucentDecor is false.
+//                    getWindow().setNavigationBarColor(0);
+//                    getWindow().setStatusBarColor(0);
+//                }
+//                break;
+//            case R.id.btn1:
+//                break;
+//        }
+//    }
+
+    public static void addVisibilityFlag(final Window window, final int flag) {
+        WindowManager.LayoutParams attrs = window.getAttributes();
+        attrs.systemUiVisibility |= flag;
+        window.setAttributes(attrs);
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-//        RefWatcher refWatcher = MyApplication.getRefWatcher(this);
-//        refWatcher.watch(this);
-    }
+
 }

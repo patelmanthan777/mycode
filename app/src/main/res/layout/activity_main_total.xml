@@ -165,10 +165,36 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="activity模式"/>
+
         <Button
             android:id="@+id/btn22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="webview"/>
+            android:text="获取像素"/>
+
+        <Button
+            android:id="@+id/btn23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="沉浸式状态栏"/>
+
+        <Button
+            android:id="@+id/btn24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="lottie动图"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上朝"/>
+
     </LinearLayout>
 </LinearLayout>

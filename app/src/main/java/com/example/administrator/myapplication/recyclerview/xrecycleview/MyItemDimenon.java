@@ -1,6 +1,5 @@
 package com.example.administrator.myapplication.recyclerview.xrecycleview;
 
-import android.support.v4.animation.AnimatorCompatHelper;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPropertyAnimatorCompat;
 import android.support.v4.view.ViewPropertyAnimatorListener;
@@ -504,7 +503,6 @@ public class MyItemDimenon extends SimpleItemAnimator {
     }
 
     private void resetAnimation(ViewHolder holder) {
-        AnimatorCompatHelper.clearInterpolator(holder.itemView);
         endAnimation(holder);
     }
 
