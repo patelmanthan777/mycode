@@ -9,4 +9,14 @@
     <color name="item_default_color">#22EEEEEE</color>
     <color name="item_pressed_color">#CCCCCC</color>
     <color name="item_activated_color">#77CEEE</color>
+    <color name="ijk_transparent_dark">#77000000</color>
+    <color name="alivc_blue">#179df2</color>
+    <color name="alivc_dialog_error_bg">#b2000000</color>
+    <color name="alivc_dialog_gesture_bg">#66ffffff</color>
+    <color name="alivc_gesture_text_color">#333333</color>
+    <color name="alivc_info_text_duration">#9f9e9e</color>
+    <color name="alivc_white">#e7e7e7</color>
+    <color name="color_normal_white">#e7e7e7</color>
+    <color name="color_rate_focused">#179df2</color>
+    <color name="color_rate_item">#4c000000</color>
 </resources>

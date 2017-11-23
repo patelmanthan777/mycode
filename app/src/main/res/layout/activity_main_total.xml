@@ -20,13 +20,13 @@
             android:id="@+id/btn2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="弹幕视频"/>
+            android:text="b战视频播放"/>
 
         <Button
             android:id="@+id/btn3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="测试视频"/>
+            android:text="google视屏播放"/>
 
         <Button
             android:id="@+id/btn4"

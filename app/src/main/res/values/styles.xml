@@ -7,7 +7,15 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
+    <style name="alivc_info_seekbar">
+        <item name="android:maxHeight">@dimen/alivc_info_seekbar_height</item>
+        <item name="android:minHeight">@dimen/alivc_info_seekbar_height</item>
+        <item name="android:paddingLeft">@dimen/alivc_info_seekbar_offset</item>
+        <item name="android:paddingRight">@dimen/alivc_info_seekbar_offset</item>
+        <item name="android:progressDrawable">@drawable/alivc_info_seekbar_bg</item>
+        <item name="android:thumb">@drawable/alivc_info_seekbar_thumb</item>
+        <item name="android:thumbOffset">@dimen/alivc_info_seekbar_offset</item>
+    </style>
     <style name="mytheme" parent="AppTheme">
         <!-- Customize your theme here. -->
         <item name="android:windowTranslucentStatus" tools:targetApi="kitkat">true</item>

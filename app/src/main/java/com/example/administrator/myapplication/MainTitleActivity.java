@@ -26,6 +26,8 @@ import com.example.administrator.myapplication.titlebar.TitleBarActivity;
 import com.example.administrator.myapplication.touch.TouchActivity;
 import com.example.administrator.myapplication.urlscheam.WebViewActivity;
 import com.example.administrator.myapplication.urlscheam.launch.StandardActivity;
+import com.example.administrator.myapplication.video.BizhanVideoActivity;
+import com.example.administrator.myapplication.video.demo.PlayerActivity;
 import com.facebook.drawee.backends.pipeline.Fresco;
 
 import butterknife.BindView;
@@ -53,6 +55,17 @@ public class MainTitleActivity extends AppCompatActivity {
             case R.id.btn1:
                 //截图
                 goNextIntent(com.example.administrator.myapplication.jieping.MainActivity.class);
+                break;
+            case R.id.btn2:
+                //B站的打出来的包大概27m，google的8m
+//                VideoActivity.intentTo(this, "/storage/emulated/0/222.mp4", "wodebiaoti");
+
+                PlayerActivity.newIntent(MainTitleActivity.this);
+                break;
+            case R.id.btn3:
+//                goNextIntent(BizhanVideoActivity.class);
+//                PlayerActivity.newIntent(MainTitleActivity.this);
+                BizhanVideoActivity.newIntent(MainTitleActivity.this);
                 break;
             case R.id.btn4:
                 break;

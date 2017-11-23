@@ -223,6 +223,10 @@
             android:name=".service_process.mutiprocess.ProcessActivity1"
             />
         <activity android:name=".okhttp.ShangchaoActivity"/>
+        <activity android:name=".video.BizhanVideoActivity"/>
+        <activity android:name=".video.demo.PlayerActivity"/>
+        <activity android:name=".video.demo.SampleChooserActivity"/>
+        <activity android:name=".video.bilibili.media.VideoActivity"/>
     </application>
 
 </manifest>
