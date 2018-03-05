@@ -227,6 +227,10 @@
         <activity android:name=".video.demo.PlayerActivity"/>
         <activity android:name=".video.demo.SampleChooserActivity"/>
         <activity android:name=".video.bilibili.media.VideoActivity"/>
+        <activity android:name=".archite.UserInfoActivity"/>
+        <activity android:name=".test.TextSpanActivity"/>
+        <activity android:name=".archite.lifecicle.LifeTestActivity"/>
+        <activity android:name=".archite.paging.MyListActivity"/>
     </application>
 
 </manifest>

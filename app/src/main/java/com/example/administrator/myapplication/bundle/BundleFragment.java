@@ -1,9 +1,9 @@
 package com.example.administrator.myapplication.bundle;
 
 import android.animation.Animator;
-import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -50,6 +50,18 @@ public class BundleFragment extends Fragment {
     public Animator onCreateAnimator(int transit, boolean enter, int nextAnim) {
         Log.e("asdasd", "onCreateAnimator");
         return super.onCreateAnimator(transit, enter, nextAnim);
+    }
+
+    @Override
+    public void onStart() {
+        Log.e("asdasd", "onStart");
+        super.onStart();
+    }
+
+    @Override
+    public void onResume() {
+        Log.e("asdasd", "onResume");
+        super.onResume();
     }
 
     @Override

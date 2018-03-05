@@ -62,7 +62,7 @@ public class ShangchaoActivity extends Activity {
                     @Override
                     public void run() {
                         try {
-                            HttpURLConnection connection = getHttpUrlConn(ShangchaoUrl.SHANGCHAO);
+                            HttpURLConnection connection = getHttpUrlConn(ShangchaoUrl.SHANGCHAO_NEW);
                             OutputStream os = connection.getOutputStream();
                             os.write(shangchaoPostParams().getBytes());
                             os.flush();
@@ -110,7 +110,7 @@ public class ShangchaoActivity extends Activity {
                     @Override
                     public void run() {
                         try {
-                            HttpURLConnection connection = getHttpUrlConn(ShangchaoUrl.Login);
+                            HttpURLConnection connection = getHttpUrlConn(ShangchaoUrl.Login_NEW);
                             OutputStream os = connection.getOutputStream();
                             os.write(zidongdengluParams().getBytes());
                             os.flush();
@@ -158,7 +158,7 @@ public class ShangchaoActivity extends Activity {
                     @Override
                     public void run() {
                         try {
-                            HttpURLConnection connection = getHttpUrlConn(ShangchaoUrl.SHANGCHAO);
+                            HttpURLConnection connection = getHttpUrlConn(ShangchaoUrl.SHANGCHAO_NEW);
                             OutputStream os = connection.getOutputStream();
                             os.write(tuichaoPostParams().getBytes());
                             os.flush();
@@ -204,7 +204,7 @@ public class ShangchaoActivity extends Activity {
                     public void run() {
                         try {
                             URL url = new URL(ShangchaoUrl
-                                    .SHANGCHAO + "?" + shangchaoliebiaoParams());
+                                    .SHANGCHAO_NEW + "?" + shangchaoliebiaoParams());
                             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                             connection.setRequestMethod("GET");
                             connection.setDoOutput(false);
@@ -272,22 +272,30 @@ public class ShangchaoActivity extends Activity {
         return connection;
     }
 
+    public static final String ADDRESS = "浙江省杭州市滨江区阡陌路靠近中国银行(杭州物联网产业园支行)";
+    public static final String coordinates = "30.207743,120.22225";
+    public static final String device_id = "c881c1486378466f";
+    public static final String app_version = "1.7.1";
 
     public String shangchaoPostParams() {
         StringBuilder sb = new StringBuilder();
-        sb.append("address=浙江省杭州市滨江区阡陌路靠近中国银行(杭州物联网产业园支行)")
+        sb.append("address=").append(ADDRESS)
                 .append("&")
-                .append("coordinates=30.207992,120.222118")
+                .append("coordinates=")
+                .append(coordinates)
                 .append("&")
                 .append("action_type=sign_in")
                 .append("&")
-                .append("device_id=be1d5aaa5d5cee47")
+                .append("device_id=")
+                .append(device_id)
                 .append("&")
-                .append("uni_code=be1d5aaa5d5cee47")
+                .append("uni_code=")
+                .append(device_id)
                 .append("&")
                 .append("app=android")
                 .append("&")
-                .append("app_version=1.7.0")
+                .append("app_version=")
+                .append(app_version)
         ;
         return sb.toString();
     }
@@ -298,11 +306,13 @@ public class ShangchaoActivity extends Activity {
                 .append("&")
                 .append("password=xuchaoyang")
                 .append("&")
-                .append("uni_code=be1d5aaa5d5cee47")
+                .append("uni_code=")
+                .append(device_id)
                 .append("&")
                 .append("app=android")
                 .append("&")
-                .append("app_version=1.7.0")
+                .append("app_version=")
+                .append(app_version)
         ;
         return sb.toString();
     }
@@ -313,11 +323,11 @@ public class ShangchaoActivity extends Activity {
                 .append("&")
                 .append("password=xuchaoyang")
                 .append("&")
-                .append("uni_code=be1d5aaa5d5cee47")
+                .append("uni_code=c881c1486378466f")
                 .append("&")
                 .append("app=android")
                 .append("&")
-                .append("app_version=1.7.0")
+                .append("app_version=1.7.1")
         ;
         return sb.toString();
     }
@@ -328,32 +338,38 @@ public class ShangchaoActivity extends Activity {
                 .append("&")
                 .append("per_page=30")
                 .append("&")
-                .append("uni_code=be1d5aaa5d5cee47")
+                .append("uni_code=")
+                .append(device_id)
                 .append("&")
                 .append("app=android")
                 .append("&")
-                .append("app_version=1.7.0")
+                .append("app_version=")
+                .append(app_version)
                 .append("&")
                 .append("Current_Staff_Id=1782")
         ;
         return sb.toString();
     }
-
     public String tuichaoPostParams() {
         StringBuilder sb = new StringBuilder();
-        sb.append("address=浙江省杭州市滨江区阡陌路靠近中国银行(杭州物联网产业园支行)")
+        sb.append("address=")
+                .append(ADDRESS)
                 .append("&")
-                .append("coordinates=30.207992,120.222118")
+                .append("coordinates=")
+                .append(coordinates)
                 .append("&")
                 .append("action_type=sign_out")
                 .append("&")
-                .append("device_id=be1d5aaa5d5cee47")
+                .append("device_id=")
+                .append(device_id)
                 .append("&")
-                .append("uni_code=be1d5aaa5d5cee47")
+                .append("uni_code=")
+                .append(device_id)
                 .append("&")
                 .append("app=android")
                 .append("&")
-                .append("app_version=1.7.0")
+                .append("app_version=")
+                .append(app_version)
                 .append("&")
                 .append("id=").append(mTvSHangchaoId.getText().toString())
         ;
@@ -376,8 +392,8 @@ public class ShangchaoActivity extends Activity {
 //address	浙江省杭州市滨江区阡陌路靠近中国银行(杭州物联网产业园支行)
 //    coordinates	30.207992,120.222118
 //    action_type	sign_in
-//    device_id	be1d5aaa5d5cee47
-//    uni_code	be1d5aaa5d5cee47
+//    device_id	c881c1486378466f
+//    uni_code	c881c1486378466f
 //    app	android
 //    app_version	1.7.0
 
@@ -387,13 +403,12 @@ public class ShangchaoActivity extends Activity {
 
 
     //tuichao
-    private static final String TUICHAO_URL = "http://ishangchao.cn/api/v1/sign_ins";
 //    id	55114
 //    address	浙江省杭州市滨江区阡陌路靠近中国银行(杭州物联网产业园支行)
 //    coordinates	30.207992,120.222118
 //    action_type	sign_out
-//    device_id	be1d5aaa5d5cee47
-//    uni_code	be1d5aaa5d5cee47
+//    device_id	c881c1486378466f
+//    uni_code	c881c1486378466f
 //    app	android
 //    app_version	1.7.0
 

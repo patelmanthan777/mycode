@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.administrator.myapplication.alpha.AlphaActivity;
+import com.example.administrator.myapplication.archite.UserInfoActivity;
 import com.example.administrator.myapplication.behavior.BehaviorActivity;
 import com.example.administrator.myapplication.broadcast.BroadCastActivity;
 import com.example.administrator.myapplication.bundle.BundleActivity;
@@ -22,6 +23,7 @@ import com.example.administrator.myapplication.pxdpsp.Px2Dp2SpActivity;
 import com.example.administrator.myapplication.recycle_virtural.VirturalRecycleActivity;
 import com.example.administrator.myapplication.recycler_swipe.MenuHorizontalActivity;
 import com.example.administrator.myapplication.service_process.mutiprocess.MutiProcessActivity;
+import com.example.administrator.myapplication.test.TextSpanActivity;
 import com.example.administrator.myapplication.titlebar.TitleBarActivity;
 import com.example.administrator.myapplication.touch.TouchActivity;
 import com.example.administrator.myapplication.urlscheam.WebViewActivity;
@@ -49,7 +51,7 @@ public class MainTitleActivity extends AppCompatActivity {
     @OnClick({R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4, R.id.btn5, R.id.btn6, R.id.btn7, R.id
             .btn8, R.id.btn9, R.id.btn10, R.id.btn11, R.id.btn12, R.id.btn13, R.id.btn14, R.id
             .btn15, R.id.btn16, R.id.btn17, R.id.btn18, R.id.btn19, R.id.btn20, R.id.btn21, R.id
-            .btn22, R.id.btn23, R.id.btn24, R.id.btn25})
+            .btn22, R.id.btn23, R.id.btn24, R.id.btn25,R.id.btn26,R.id.btn27})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn1:
@@ -142,6 +144,12 @@ public class MainTitleActivity extends AppCompatActivity {
                 break;
             case R.id.btn25:
                 goNextIntent(ShangchaoActivity.class);
+                break;
+            case R.id.btn26:
+                goNextIntent(UserInfoActivity.class);
+                break;
+            case R.id.btn27:
+                goNextIntent(TextSpanActivity.class);
                 break;
         }
     }

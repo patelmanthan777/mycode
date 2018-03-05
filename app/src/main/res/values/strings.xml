@@ -1,5 +1,5 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">AAA我的测试</string>
+    <string name="app_name">AAA测试</string>
     <string name="hide_danmaku">hide</string>
     <string name="show_danmaku">show</string>
     <string name="pause_danmaku">pause</string>
