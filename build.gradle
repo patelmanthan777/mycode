@@ -3,12 +3,12 @@
 buildscript {
     ext.kotlin_version = '1.1.51'
     repositories {
-        google()
         jcenter()
+        google()
 //        google()
 //        mavenCentral()
 //        maven { url "https://jitpack.io" }
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+//        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.1'
@@ -24,12 +24,12 @@ buildscript {
 
 allprojects {
     repositories {
-        google()
         jcenter()
+        google()
 //        google()
 //        mavenCentral()
 //        maven { url "https://jitpack.io" }
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+//        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
     }
 }
 
@@ -38,12 +38,19 @@ task clean(type: Delete) {
 }
 ext {
     // SDK Version
-    compileSdkVersion = 26
-    buildToolsVersion = '26.0.2'
+    compileSdkVersion = 27
+    buildToolsVersion = '27.0.2'
     minSdkVersion = 16
     targetSdkVersion = 25
 
-    supportVersion = '24.0.0'
+    supportVersion = '27.1.0'
+
+//    architecture components
+
+    componentsVersions = '1.0.0'
+
+    lifecycle_componentsVersions = '1.1.0'
+//    versions.arch = hasProperty("ARCH_VERSION") ? getProperty("ARCH_VERSION") : "1.0.0"
 
     // support
     libSupportV7Appcompat = "com.android.support:appcompat-v7:${supportVersion}"
@@ -53,4 +60,28 @@ ext {
 //    libSupportAnnotations = "com.android.support:support-annotations:${supportVersion}"
 //    libSupportV7GridLayout = "com.android.support:gridlayout-v7:${supportVersion}"
 
+    room = [:]
+    room.runtime = "android.arch.persistence.room:runtime:${componentsVersions}"
+    //annotationProcessor
+    room.compiler = "android.arch.persistence.room:compiler:${componentsVersions}"
+    room.rxjava2 = "android.arch.persistence.room:rxjava2:${componentsVersions}"
+
+    paging = [:]
+    paging.runtime = "android.arch.paging:runtime:1.0.0-alpha6"
+
+    lifecycle = [:]
+    // Lifecycles
+    //annotationProcessor
+    lifecycle.compiler = "android.arch.lifecycle:compiler:${lifecycle_componentsVersions}"
+    //annotationProcessor
+    //If your app uses Java 8, we recommend using this library instead of android.arch.lifecycle:compiler.
+    lifecycle.java8 = "android.arch.lifecycle:common-java8:${lifecycle_componentsVersions}"
+    //LiveData, and ViewModel
+    lifecycle.extensions = "android.arch.lifecycle:extensions:${lifecycle_componentsVersions}"
+    // alternatively, just ViewModel
+    lifecycle.viewmodel = "android.arch.lifecycle:viewmodel:${lifecycle_componentsVersions}"
+    // alternatively, just LiveData
+    lifecycle.livedata = "android.arch.lifecycle:livedata:${lifecycle_componentsVersions}"
+    //Lifecycles only (no ViewModel or LiveData)
+    lifecycle.runtime = "android.arch.lifecycle:runtime:${lifecycle_componentsVersions}"
 }
